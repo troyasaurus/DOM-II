@@ -14,8 +14,12 @@ funBusLogo.addEventListener("mouseover", (event) => {
 //-----------------------------------------------------
 
 
-const bottomPage = document.querySelector("body");
-bottomPage.addEventListener("keydown", (event) => {
-    bottomPage
-    bottomPage.style.transition = "all 0.3s";
-   });
+
+//------- Fun Bus Pic, Double Click------
+//-----------------------------------------------------
+const greenBlock = document.querySelector(".intro img");
+    greenBlock.addEventListener("dblclick", (event) => {
+    greenBlock.src = "img/destination.jpg";
+  });
+//-----------------------------------------------------
+//-----------------------------------------------------
