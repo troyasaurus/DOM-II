@@ -1,5 +1,5 @@
 
-//------- Fun Bus Logo, Mouse Enter & Mouse Leave------
+//------- Fun Bus Logo, Mouse Over & Mouse Leave------
 //-----------------------------------------------------
 const funBusLogo = document.querySelector(".logo-heading");
 funBusLogo.addEventListener("mouseover", (event) => {
@@ -35,11 +35,17 @@ body.addEventListener("click", () => {
 const navColor = document.querySelector("header");
 navColor.addEventListener("click", () => {
   navColor.style.backgroundColor="seagreen";
+  event.stopPropagation();
   navColor.style.color="white";
 });
 //-----------------------------------------------------
 //-----------------------------------------------------
 
+
+const stopLink = document.querySelector(".nav-link");
+stopLink.addEventListener('click', (event) => {
+  event.preventDefault();
+});
 
 
 
@@ -49,10 +55,21 @@ const imgSize = document.querySelector(".content-section img")
 window.addEventListener("resize", () => {
     imgSize.src = "img/fun.jpg"
 });
+const imgSize2 = document.querySelector(".inverse-content img")
+window.addEventListener("resize", () => {
+    imgSize2.src = "img/adventure.jpg"
+});
 //-----------------------------------------------------
 //-----------------------------------------------------
 
-
+document.addEventListener('fullscreenchange', (event) => {
+  if (document.fullscreenElement){
+    console.log(`Element: ${document.fullscreenElement.id}
+    `);
+  }else{
+    console.log('Leaving full-screen mode.');
+  }
+});
 
 
 //---------------------Scroll--------------------------
@@ -79,3 +96,6 @@ navFontColor.forEach(title => {
 
 //-----------------------------------------------------
 //-----------------------------------------------------
+
+
+
